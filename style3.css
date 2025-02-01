@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+}
+
+h1 {
+    font-size: 5em;
+    font-family: 'Courier New', Courier, monospace;
+    color: #FE3838;
+}
+
+p {
+    font-size: 2.5em;
+    font-family:'Courier New', Courier, monospace;
+    color: #946AFB
+}
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffe5e5;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 80px;
+    max-width: 2500px;
+    margin: 20px;
+}
+
+.container .tenor-gif-embed {
+    max-width: 800px;
+}
+
+.container .btn {
+    display: flex;
+    gap: 25px;
+}
+
+.btn a{
+    text-decoration: none;
+    font-size: 3em;
+    color: #f0f;
+    background: #fff;
+    padding: 10px 25px;
+    border-radius: 12px;
+    box-shadow: 0.6rem 1.2rem 3.1rem hsl(0, 0%, 0%, 0.3);
+
+}

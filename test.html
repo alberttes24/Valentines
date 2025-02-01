@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkbox Export</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .checkbox-group {
+      margin: 10px 0;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Select Options to Export</h1>
+  <form id="checkboxForm">
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="option" value="Option 1"> Option 1</label>
+    </div>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="option" value="Option 2"> Option 2</label>
+    </div>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="option" value="Option 3"> Option 3</label>
+    </div>
+    <button type="button" onclick="exportSelected()">Export Selected</button>
+  </form>
+
+  <script>
+    function exportSelected() {
+      const checkboxes = document.querySelectorAll('input[name="option"]:checked');
+      const selectedValues = Array.from(checkboxes).map(cb => cb.value);
+
+      if (selectedValues.length === 0) {
+        alert('No options selected!');
+        return;
+      }
+
+      const blob = new Blob([selectedValues.join('\n')], { type: 'text/plain' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'selected_values.txt';
+      link.click();
+    }
+  </script>
+</body>
+</html>
